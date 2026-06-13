@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Date Night Card Draw</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Date Night Deck</p>
+        <h1>Press spacebar to draw a random card.</h1>
+        <p class="intro">
+          Drawn cards stay out of the deck until you refresh it.
+        </p>
+      </section>
+
+      <section class="deck-panel" aria-live="polite">
+        <div class="deck-status">
+          <span id="remaining-count">{{ remaining_count }}</span>
+          <span>/</span>
+          <span id="total-count">{{ total_cards }}</span>
+          <span>cards remaining</span>
+        </div>
+
+        <article id="card" class="card card-empty">
+          <div class="card-meta">
+            <span id="card-id">Ready</span>
+            <span id="card-category">Waiting for draw</span>
+          </div>
+          <p id="card-tone" class="card-tone">Spacebar or Draw Card</p>
+          <p id="card-text" class="card-text">
+            Your first random card will appear here.
+          </p>
+        </article>
+
+        <p id="message" class="message" role="status"></p>
+
+        <div class="actions">
+          <button id="draw-button" type="button">Draw Card</button>
+          <button id="reset-button" class="secondary" type="button">Refresh Deck</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

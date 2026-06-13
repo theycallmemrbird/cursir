@@ -1,0 +1,191 @@
+:root {
+  color-scheme: dark;
+  --background: #160d16;
+  --panel: rgba(255, 255, 255, 0.09);
+  --panel-strong: rgba(255, 255, 255, 0.16);
+  --text: #fff8f5;
+  --muted: #d8bfc8;
+  --accent: #ff7a90;
+  --accent-strong: #ff4f72;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 122, 144, 0.3), transparent 34rem),
+    radial-gradient(circle at bottom right, rgba(130, 72, 255, 0.28), transparent 32rem),
+    var(--background);
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.35rem;
+  color: #220914;
+  background: var(--accent);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 0.75rem 2rem var(--shadow);
+  transition: transform 160ms ease, background 160ms ease, opacity 160ms ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: var(--accent-strong);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+button.secondary {
+  color: var(--text);
+  background: var(--panel-strong);
+}
+
+.app-shell {
+  width: min(58rem, calc(100% - 2rem));
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  align-content: center;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+.hero {
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 44rem;
+  margin: 0 auto;
+  font-size: clamp(2.3rem, 8vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+.intro {
+  max-width: 34rem;
+  margin: 1.25rem auto 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.deck-panel {
+  padding: clamp(1rem, 4vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2rem;
+  background: var(--panel);
+  box-shadow: 0 1.5rem 5rem var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.deck-status {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.card {
+  min-height: 21rem;
+  display: grid;
+  align-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 5vw, 2.2rem);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 225, 231, 0.9)),
+    #fff4f6;
+  color: #32111b;
+  box-shadow: inset 0 0 0 1px rgba(91, 42, 54, 0.12);
+}
+
+.card-empty {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.68)),
+    #fff;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: #865062;
+  font-size: 0.83rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.card-tone {
+  margin: 0;
+  color: #b63455;
+  font-size: 0.98rem;
+  font-weight: 900;
+}
+
+.card-text {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 4vw, 2.45rem);
+  line-height: 1.16;
+}
+
+.message {
+  min-height: 1.5rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  text-align: center;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 38rem) {
+  .app-shell {
+    width: min(100% - 1rem, 58rem);
+    padding: 1rem 0;
+  }
+
+  .deck-panel {
+    border-radius: 1.25rem;
+  }
+
+  .card {
+    min-height: 24rem;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
