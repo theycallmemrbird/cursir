@@ -7,10 +7,10 @@ you refresh the deck.
 ## Run locally
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
-flask --app app run
+python3 -m pip install -r requirements.txt
+python3 -m flask --app app run
 ```
 
 Open the local Flask URL in your browser, then press `Space` or use the
@@ -19,5 +19,5 @@ on-screen button to draw cards.
 ## Test
 
 ```bash
-pytest
+python3 -m pytest
 ```
